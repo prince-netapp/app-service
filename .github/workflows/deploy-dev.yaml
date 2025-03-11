@@ -1,0 +1,20 @@
+name: CI build
+on:
+  workflow_dispatch:
+    inputs:
+      push-image:
+        description: 'Publish the image to ECR and ACR'
+        required: true
+        type: boolean
+        default: false
+
+  push:
+    branches:
+      - master
+
+  pull_request:
+
+permissions:
+  contents: read
+  id-token: write
+  pull-requests: write
